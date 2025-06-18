@@ -51,22 +51,23 @@ public class BibliotecaLogin extends Application {
         form.setMaxWidth(400);
         HBox.setHgrow(form, Priority.ALWAYS);
 
-        // Contenedor principal
+        // Contenedor principal (panel blanco con esquinas redondeadas)
         HBox contenido = new HBox(50, logoContainer, form);
         contenido.setAlignment(Pos.CENTER);
-        contenido.setPadding(new Insets(50));
+        contenido.setPadding(new Insets(100));
         contenido.setStyle("-fx-background-color: white; -fx-border-radius: 20px; -fx-background-radius: 20px;");
 
+        // Fondo general negro con padding alrededor del contenido
         StackPane root = new StackPane(contenido);
         root.setStyle("-fx-background-color: #333333;");
+        root.setPadding(new Insets(300)); // Espacio para separar del borde de la ventana
 
-        Scene scene = new Scene(root, 800, 600);  // más ancho y alto
+        Scene scene = new Scene(root, 800, 600);
         primaryStage.setTitle("Login Biblioteca");
         primaryStage.setScene(scene);
-        primaryStage.setMaximized(true); // ⬅️ Abre ya en pantalla completa (opcional)
+        primaryStage.setMaximized(true);
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);
