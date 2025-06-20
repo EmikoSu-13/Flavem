@@ -1,4 +1,4 @@
-package yahir.com.designing_dashboard;
+package bibloteca;
 import com.formdev.flatlaf.FlatLightLaf;
 
 import javax.swing.*;
@@ -28,11 +28,11 @@ public class DashboardUI extends JFrame {
         sidebar.setBorder(new EmptyBorder(20, 10, 20, 10));
         add(sidebar, BorderLayout.WEST);
 
-        JLabel logo = new JLabel("FLAVEM", SwingConstants.CENTER);
-        logo.setFont(new Font("Serif", Font.BOLD, 28));
-        logo.setForeground(Color.WHITE);
-        logo.setAlignmentX(Component.CENTER_ALIGNMENT);
-        sidebar.add(logo);
+        ImageIcon logoIcon = new ImageIcon(getClass().getResource("/Icons/logo100.png"));
+        Image img = logoIcon.getImage().getScaledInstance(180, -1, Image.SCALE_SMOOTH);
+        JLabel logoLabel = new JLabel(new ImageIcon(img));
+        logoLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        sidebar.add(logoLabel);
 
         sidebar.add(Box.createRigidArea(new Dimension(0, 10)));
 
